@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulario Espacial — Pronombres y Adverbios 6°</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#050518;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:'Nunito',sans-serif;}
+.sw{width:100%;max-width:720px;background:linear-gradient(160deg,#0a0a2e 0%,#0d1b4b 40%,#0a1628 100%);border-radius:20px;padding:22px 20px 26px;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.6);}
+.sbg{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:20px;}
+.st{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d,2s) ease-in-out infinite alternate;}
+@keyframes twinkle{from{opacity:.15;transform:scale(1);}to{opacity:1;transform:scale(1.5);}}
+.pl1{position:absolute;right:-25px;top:8px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ff6b35,#c0392b);box-shadow:0 0 30px #ff6b3555;opacity:.65;}
+.pl2{position:absolute;left:-18px;bottom:40px;width:55px;height:55px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#a78bfa,#5b21b6);box-shadow:0 0 20px #a78bfa55;opacity:.55;}
+.pl3{position:absolute;right:60px;bottom:18px;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#34d399,#065f46);box-shadow:0 0 12px #34d39955;opacity:.5;}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;position:relative;z-index:2;flex-wrap:wrap;gap:8px;}
+.gtitle{font-size:16px;font-weight:900;color:#fff;}.gtitle span{color:#fbbf24;}
+.srow{display:flex;gap:6px;}
+.sc{background:rgba(255,255,255,.1);border:.5px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.8);}
+.sc b{color:#fbbf24;font-weight:900;}
+.breset{font-size:11px;padding:5px 14px;cursor:pointer;border-radius:20px;border:.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-family:'Nunito',sans-serif;font-weight:700;}
+.breset:hover{background:rgba(255,255,255,.2);}
+
+.round-tabs{display:flex;gap:6px;margin-bottom:12px;position:relative;z-index:2;}
+.rtab{flex:1;text-align:center;padding:7px;border-radius:10px;font-size:11px;font-weight:800;cursor:default;border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.35);background:rgba(255,255,255,.04);}
+.rtab.active{border-color:#fbbf24;color:#fbbf24;background:rgba(251,191,36,.12);}
+.rtab.done{border-color:#34d399;color:#34d399;background:rgba(52,211,153,.1);}
+
+.pbar{height:6px;background:rgba(255,255,255,.1);border-radius:99px;margin-bottom:14px;overflow:hidden;position:relative;z-index:2;}
+.pfill{height:100%;background:linear-gradient(90deg,#34d399,#fbbf24);border-radius:99px;transition:width .4s;}
+
+/* RONDA 1 */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:2;}
+.clbl{font-size:10px;color:rgba(255,255,255,.45);margin-bottom:6px;text-align:center;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
+.card{border:1.5px solid rgba(255,255,255,.15);border-radius:12px;padding:8px 10px;font-size:12px;cursor:pointer;background:rgba(255,255,255,.07);color:rgba(255,255,255,.9);text-align:center;min-height:56px;display:flex;align-items:center;justify-content:center;flex-direction:column;line-height:1.35;transition:all .15s;margin-bottom:7px;user-select:none;font-family:'Nunito',sans-serif;font-weight:700;gap:3px;}
+.card:hover:not(.matched):not(.wflash){background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4);}
+.card.selected{border:2px solid #fbbf24;background:rgba(251,191,36,.18);color:#fde68a;}
+.card.matched{border:1.5px solid #34d399;background:rgba(52,211,153,.15);color:#6ee7b7;cursor:default;}
+.card.wflash{border:2px solid #f87171;background:rgba(248,113,113,.2);color:#fca5a5;}
+.ico{font-size:14px;line-height:1;}
+.bdg{display:inline-block;font-size:9px;padding:2px 7px;border-radius:99px;font-weight:800;}
+.bp{background:rgba(167,139,250,.3);color:#c4b5fd;border:.5px solid rgba(167,139,250,.4);}
+.ba{background:rgba(52,211,153,.25);color:#6ee7b7;border:.5px solid rgba(52,211,153,.35);}
+.hintbox{margin-top:10px;background:rgba(251,191,36,.1);border-left:3px solid #fbbf24;border-radius:0 8px 8px 0;padding:8px 12px;font-size:12px;color:rgba(255,255,255,.75);min-height:32px;position:relative;z-index:2;font-family:'Nunito',sans-serif;font-weight:700;}
+
+/* RONDA 2 */
+.r2-wrap{position:relative;z-index:2;}
+.r2prog{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:10px;font-weight:700;}
+.phrase-card{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+.phrase-q{font-size:12px;color:rgba(255,255,255,.5);font-weight:700;text-align:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;}
+.phrase-text{font-size:15px;color:#fff;font-weight:800;line-height:1.6;text-align:center;margin-bottom:12px;}
+.phrase-text .hl{color:#fbbf24;background:rgba(251,191,36,.2);padding:2px 8px;border-radius:6px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.opt{border:1.5px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 10px;font-size:12px;cursor:pointer;background:rgba(255,255,255,.07);color:rgba(255,255,255,.85);text-align:center;font-family:'Nunito',sans-serif;font-weight:700;transition:all .15s;line-height:1.3;}
+.opt:hover:not(.oc):not(.ow){background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);}
+.oc{border:2px solid #34d399;background:rgba(52,211,153,.2);color:#6ee7b7;cursor:default;}
+.ow{border:2px solid #f87171;background:rgba(248,113,113,.15);color:#fca5a5;cursor:default;}
+.pfb{font-size:11px;margin-top:9px;min-height:18px;font-weight:700;text-align:center;line-height:1.4;}
+.pfb-ok{color:#34d399;} .pfb-err{color:#f87171;}
+.btn-next{display:block;width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1.5px solid #fbbf24;background:rgba(251,191,36,.15);color:#fde68a;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;transition:background .15s;}
+.btn-next:hover:not(:disabled){background:rgba(251,191,36,.3);}
+.btn-next:disabled{opacity:.3;cursor:default;}
+
+/* CELEBRACIÓN */
+.cel{text-align:center;padding:2.5rem 1rem;display:none;position:relative;z-index:2;}
+.cel-ico{font-size:52px;margin-bottom:12px;animation:bounce .6s ease infinite alternate;}
+@keyframes bounce{from{transform:translateY(0);}to{transform:translateY(-12px);}}
+.cel h2{font-size:22px;font-weight:900;color:#fbbf24;margin-bottom:8px;}
+.cel p{font-size:14px;color:rgba(255,255,255,.8);margin-bottom:18px;font-weight:700;line-height:1.5;}
+.cel-stars{font-size:34px;letter-spacing:8px;margin-bottom:16px;}
+.cel-scores{display:flex;gap:10px;justify-content:center;margin-bottom:20px;}
+.cel-score{background:rgba(255,255,255,.1);border:.5px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 20px;text-align:center;}
+.cel-score .lbl{font-size:10px;color:rgba(255,255,255,.5);font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+.cel-score .val{font-size:20px;font-weight:900;color:#fbbf24;}
+</style>
+</head>
+<body>
+<div class="sw">
+  <div class="sbg" id="sbg"></div>
+  <div class="pl1"></div><div class="pl2"></div><div class="pl3"></div>
+
+  <div class="topbar">
+    <div class="gtitle">🚀 Vocabulario <span>Espacial</span></div>
+    <div class="srow">
+      <div class="sc">Pares: <b id="mc">0</b>/<b id="tc">0</b></div>
+      <div class="sc">Intentos: <b id="att">0</b></div>
+    </div>
+    <button class="breset" onclick="restartAll()">↺ Reiniciar</button>
+  </div>
+
+  <div class="round-tabs">
+    <div class="rtab active" id="tab1">🪐 Ronda 1 — Emparejar</div>
+    <div class="rtab" id="tab2">☄ Ronda 2 — Identificar</div>
+  </div>
+
+  <div class="pbar"><div class="pfill" id="pfill" style="width:0%"></div></div>
+
+  <!-- RONDA 1 -->
+  <div id="r1">
+    <div class="cols">
+      <div><div class="clbl">☄ Término</div><div id="tcol"></div></div>
+      <div><div class="clbl">🪐 Definición</div><div id="dcol"></div></div>
+    </div>
+    <div class="hintbox" id="hintbox">Selecciona una tarjeta para ver la pista. ¡Buena suerte astronauta! 🚀</div>
+  </div>
+
+  <!-- RONDA 2 -->
+  <div id="r2" style="display:none">
+    <div class="r2prog" id="r2prog"></div>
+    <div class="r2-wrap" id="r2wrap"></div>
+  </div>
+
+  <!-- CELEBRACIÓN -->
+  <div class="cel" id="cel">
+    <div class="cel-ico">🚀</div>
+    <div class="cel-stars" id="celstars"></div>
+    <h2>¡Misión completada!</h2>
+    <div class="cel-scores">
+      <div class="cel-score"><div class="lbl">Ronda 1</div><div class="val" id="sc1">0/6</div></div>
+      <div class="cel-score"><div class="lbl">Ronda 2</div><div class="val" id="sc2">0/6</div></div>
+      <div class="cel-score"><div class="lbl">Intentos</div><div class="val" id="scatt">0</div></div>
+    </div>
+    <p id="celp"></p>
+    <button class="breset" style="font-size:14px;padding:9px 24px;" onclick="restartAll()">🌟 Nueva misión</button>
+  </div>
+</div>
+
+<script>
+const BANK1=[
+  {id:1,term:"Pronombre personal",def:"Sustituye al nombre de una persona. Ej: yo, tú, él.",hint:"¿Quién realiza la acción?",cat:"pron",ico:"🪐"},
+  {id:2,term:"Pronombre posesivo",def:"Indica a quién pertenece algo. Ej: mío, tuyo, suyo.",hint:"Expresa posesión sin nombrar al dueño.",cat:"pron",ico:"🌍"},
+  {id:3,term:"Pronombre demostrativo",def:"Señala distancia entre hablante y objeto. Ej: este, ese, aquel.",hint:"¿Cerca, medio o lejos?",cat:"pron",ico:"🌙"},
+  {id:4,term:"Pronombre interrogativo",def:"Se usa en preguntas. Ej: ¿quién?, ¿qué?, ¿cuál?",hint:"Lo usas para hacer preguntas directas.",cat:"pron",ico:"⭐"},
+  {id:5,term:"Pronombre indefinido",def:"Refiere a personas o cosas sin precisarlas. Ej: alguien, nadie.",hint:"Habla de alguien sin ser exacto.",cat:"pron",ico:"🛸"},
+  {id:6,term:"Pronombre reflexivo",def:"La acción recae sobre el mismo sujeto. Ej: me, te, se, nos.",hint:"El sujeto actúa sobre sí mismo.",cat:"pron",ico:"🔭"},
+  {id:7,term:"Pronombre relativo",def:"Relaciona una oración con un sustantivo anterior. Ej: que, quien.",hint:"Conecta dos partes de una oración.",cat:"pron",ico:"🌠"},
+  {id:8,term:"Pronombre recíproco",def:"Dos o más sujetos se realizan la acción mutuamente. Ej: se, nos.",hint:"La acción es mutua entre dos o más.",cat:"pron",ico:"💫"},
+  {id:9,term:"Adverbio de tiempo",def:"Indica cuándo ocurre la acción. Ej: hoy, ayer, siempre.",hint:"Responde: ¿cuándo ocurre?",cat:"adv",ico:"☄"},
+  {id:10,term:"Adverbio de lugar",def:"Indica dónde ocurre la acción. Ej: aquí, allá, cerca, lejos.",hint:"Responde: ¿dónde ocurre?",cat:"adv",ico:"🚀"},
+  {id:11,term:"Adverbio de modo",def:"Indica cómo se realiza la acción. Ej: bien, mal, rápido.",hint:"Responde: ¿cómo se hace?",cat:"adv",ico:"🌌"},
+  {id:12,term:"Adverbio de cantidad",def:"Indica en qué medida ocurre algo. Ej: mucho, poco, bastante.",hint:"Responde: ¿cuánto?",cat:"adv",ico:"🛰"},
+];
+
+const BANK2=[
+  {id:13,phrase:"Ella llegó tarde a la escuela.",word:"Ella",answer:"Pronombre personal",options:["Pronombre personal","Pronombre reflexivo","Adverbio de tiempo","Adverbio de modo"],exp:"'Ella' sustituye el nombre de una persona."},
+  {id:14,phrase:"¿Cuándo terminará la clase?",word:"Cuándo",answer:"Adverbio interrogativo de tiempo",options:["Adverbio interrogativo de tiempo","Pronombre interrogativo","Adverbio de lugar","Pronombre indefinido"],exp:"'Cuándo' pregunta sobre el momento en que ocurre algo."},
+  {id:15,phrase:"Nadie quiso responder la pregunta.",word:"Nadie",answer:"Pronombre indefinido",options:["Pronombre indefinido","Pronombre personal","Adverbio de negación","Pronombre reflexivo"],exp:"'Nadie' se refiere a personas sin precisarlas."},
+  {id:16,phrase:"El libro que leímos era muy interesante.",word:"que",answer:"Pronombre relativo",options:["Pronombre relativo","Pronombre demostrativo","Adverbio de modo","Pronombre interrogativo"],exp:"'Que' relaciona la oración con el sustantivo 'libro'."},
+  {id:17,phrase:"Ellos se abrazaron al terminar el partido.",word:"se",answer:"Pronombre recíproco",options:["Pronombre recíproco","Pronombre reflexivo","Pronombre personal","Adverbio de modo"],exp:"'Se' indica que la acción es mutua entre ellos."},
+  {id:18,phrase:"Estudia aquí, donde hay más luz.",word:"aquí",answer:"Adverbio de lugar",options:["Adverbio de lugar","Adverbio de tiempo","Pronombre demostrativo","Adverbio de modo"],exp:"'Aquí' indica el lugar donde ocurre la acción."},
+  {id:19,phrase:"Corre muy rápido en las mañanas.",word:"rápido",answer:"Adverbio de modo",options:["Adverbio de modo","Adverbio de cantidad","Pronombre indefinido","Adverbio de tiempo"],exp:"'Rápido' indica cómo realiza la acción de correr."},
+  {id:20,phrase:"Quizás mañana llueva en la ciudad.",word:"Quizás",answer:"Adverbio de duda",options:["Adverbio de duda","Adverbio de afirmación","Pronombre indefinido","Adverbio de negación"],exp:"'Quizás' expresa incertidumbre sobre lo que se dice."},
+  {id:21,phrase:"Primero estudia y luego puedes jugar.",word:"Primero",answer:"Adverbio de orden",options:["Adverbio de orden","Adverbio de tiempo","Adverbio de modo","Pronombre indefinido"],exp:"'Primero' indica el orden o secuencia de las acciones."},
+  {id:22,phrase:"María se peinó frente al espejo.",word:"se",answer:"Pronombre reflexivo",options:["Pronombre reflexivo","Pronombre recíproco","Pronombre personal","Adverbio de modo"],exp:"'Se' indica que María realiza la acción sobre sí misma."},
+  {id:23,phrase:"Ese cuaderno es el tuyo.",word:"tuyo",answer:"Pronombre posesivo",options:["Pronombre posesivo","Pronombre demostrativo","Pronombre personal","Adverbio de lugar"],exp:"'Tuyo' indica a quién pertenece el cuaderno."},
+  {id:24,phrase:"Jamás he visto algo tan bonito.",word:"Jamás",answer:"Adverbio de negación",options:["Adverbio de negación","Adverbio de tiempo","Adverbio de duda","Pronombre indefinido"],exp:"'Jamás' niega o rechaza lo que se expresa."},
+];
+
+const R1_SIZE=6,R2_SIZE=6;
+let r1items=[],r2items=[],sel=null,matchedIds=new Set(),att=0;
+let currentRound=1,r2idx=0,r2score=0,r2answered=false,r1att=0,r2att=0;
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5);}
+
+function makeStars(){
+  const bg=document.getElementById('sbg');bg.innerHTML='';
+  for(let i=0;i<60;i++){
+    const s=document.createElement('div');s.className='st';
+    const sz=Math.random()*2.5+1;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${(Math.random()*2+1.5).toFixed(1)}s;animation-delay:${(Math.random()*2).toFixed(1)}s;`;
+    bg.appendChild(s);
+  }
+}
+
+function restartAll(){
+  matchedIds.clear();att=0;r1att=0;r2att=0;sel=null;
+  currentRound=1;r2idx=0;r2score=0;r2answered=false;
+  r1items=shuffle(BANK1).slice(0,R1_SIZE);
+  r2items=shuffle(BANK2).slice(0,R2_SIZE);
+  document.getElementById('cel').style.display='none';
+  document.getElementById('r1').style.display='block';
+  document.getElementById('r2').style.display='none';
+  setTab(1);
+  document.getElementById('tc').textContent=R1_SIZE;
+  updateStats();renderR1();
+  setHint('Selecciona una tarjeta para ver la pista. ¡Buena suerte astronauta! 🚀');
+}
+
+function setTab(n){
+  document.getElementById('tab1').className='rtab'+(n===1?' active':n>1?' done':'');
+  document.getElementById('tab2').className='rtab'+(n===2?' active':n>2?' done':'');
+}
+
+function updateStats(){
+  const matched=currentRound===1?matchedIds.size/2:r2score;
+  const total=currentRound===1?R1_SIZE:R2_SIZE;
+  document.getElementById('mc').textContent=matched;
+  document.getElementById('tc').textContent=total;
+  document.getElementById('att').textContent=att;
+  const pct=currentRound===1?(matchedIds.size/(R1_SIZE*2)*100):((r2idx/R2_SIZE)*100);
+  document.getElementById('pfill').style.width=pct+'%';
+}
+
+function setHint(t){const h=document.getElementById('hintbox');if(h)h.textContent=t;}
+
+function renderR1(){
+  const tc=document.getElementById('tcol'),dc=document.getElementById('dcol');
+  tc.innerHTML='';dc.innerHTML='';
+  shuffle(r1items).forEach(item=>{
+    const d=document.createElement('div');
+    d.className='card'+(matchedIds.has('t'+item.id)?' matched':'');
+    d.innerHTML=`<span class="ico">${item.ico}</span><span class="bdg ${item.cat==='pron'?'bp':'ba'}">${item.cat==='pron'?'Pronombre':'Adverbio'}</span>${item.term}`;
+    if(!matchedIds.has('t'+item.id))d.onclick=()=>handleR1(d,item.id,'term');
+    tc.appendChild(d);
+  });
+  shuffle(r1items).forEach(item=>{
+    const d=document.createElement('div');
+    d.className='card'+(matchedIds.has('d'+item.id)?' matched':'');
+    d.innerHTML=`<span class="ico">${item.cat==='pron'?'🪐':'☄'}</span>${item.def}`;
+    if(!matchedIds.has('d'+item.id))d.onclick=()=>handleR1(d,item.id,'def');
+    dc.appendChild(d);
+  });
+}
+
+function handleR1(el,id,type){
+  if(matchedIds.has((type==='term'?'t':'d')+id))return;
+  if(!sel){
+    sel={el,id,type};el.classList.add('selected');
+    const item=r1items.find(i=>i.id===id);
+    setHint('💫 Pista: '+item.hint);return;
+  }
+  if(sel.el===el){el.classList.remove('selected');sel=null;setHint('Selecciona una tarjeta para ver la pista.');return;}
+  att++;r1att++;
+  if(sel.id===id&&sel.type!==type){
+    matchedIds.add('t'+id);matchedIds.add('d'+id);
+    sel.el.classList.remove('selected');sel.el.classList.add('matched');
+    el.classList.add('matched');sel=null;
+    setHint('✅ ¡Correcto! ¡Par encontrado!');
+    updateStats();
+    if(matchedIds.size===r1items.length*2)setTimeout(startR2,700);
+  } else {
+    el.classList.add('wflash');sel.el.classList.add('wflash');
+    sel.el.classList.remove('selected');
+    const we=el,pe=sel.el;sel=null;
+    const item=r1items.find(i=>i.id===id);
+    setHint('❌ Intenta de nuevo. Pista: '+item.hint);
+    setTimeout(()=>{we.classList.remove('wflash');pe.classList.remove('wflash');},700);
+  }
+  updateStats();
+}
+
+function startR2(){
+  currentRound=2;r2idx=0;r2score=0;r2answered=false;att=0;
+  document.getElementById('r1').style.display='none';
+  document.getElementById('r2').style.display='block';
+  setTab(2);
+  document.getElementById('mc').textContent=0;
+  document.getElementById('tc').textContent=R2_SIZE;
+  document.getElementById('att').textContent=0;
+  document.getElementById('pfill').style.width='0%';
+  renderR2();
+}
+
+function renderR2(){
+  if(r2idx>=r2items.length){showCelebration();return;}
+  r2answered=false;
+  const item=r2items[r2idx];
+  document.getElementById('r2prog').textContent='Frase '+(r2idx+1)+' de '+R2_SIZE;
+  const ph=item.phrase.replace(item.word,'<span class="hl">'+item.word+'</span>');
+  const opts=shuffle(item.options).map(o=>
+    `<div class="opt" onclick="answerR2(this,'${o.replace(/'/g,"\\'")}',${item.id})">${o}</div>`
+  ).join('');
+  document.getElementById('r2wrap').innerHTML=`
+    <div class="phrase-card">
+      <div class="phrase-q">¿Qué es la palabra destacada?</div>
+      <div class="phrase-text">${ph}</div>
+      <div class="opts">${opts}</div>
+      <div class="pfb" id="pfb"></div>
+    </div>
+    <button class="btn-next" id="btnnext" onclick="nextPhrase()" disabled>Siguiente frase →</button>
+  `;
+  updateStats();
+}
+
+function answerR2(el,answer,id){
+  if(r2answered)return;
+  r2answered=true;att++;r2att++;
+  const item=r2items.find(i=>i.id===id);
+  const fb=document.getElementById('pfb');
+  document.querySelectorAll('.opt').forEach(o=>o.style.pointerEvents='none');
+  if(answer===item.answer){
+    el.classList.add('oc');
+    fb.className='pfb pfb-ok';
+    fb.textContent='✅ ¡Correcto! '+item.exp;
+    r2score++;
+  } else {
+    el.classList.add('ow');
+    fb.className='pfb pfb-err';
+    fb.textContent='❌ La respuesta era: '+item.answer+'. '+item.exp;
+    document.querySelectorAll('.opt').forEach(o=>{
+      if(o.textContent===item.answer)o.classList.add('oc');
+    });
+  }
+  document.getElementById('mc').textContent=r2score;
+  document.getElementById('att').textContent=att;
+  document.getElementById('pfill').style.width=((r2idx+1)/R2_SIZE*100)+'%';
+  document.getElementById('btnnext').disabled=false;
+}
+
+function nextPhrase(){r2idx++;renderR2();}
+
+function showCelebration(){
+  document.getElementById('r2').style.display='none';
+  const cel=document.getElementById('cel');cel.style.display='block';
+  const ratio=r2score/R2_SIZE;
+  const stars=ratio>=0.8?'★★★':ratio>=0.5?'★★☆':'★☆☆';
+  document.getElementById('celstars').textContent=stars;
+  document.getElementById('sc1').textContent=R1_SIZE+'/'+R1_SIZE;
+  document.getElementById('sc2').textContent=r2score+'/'+R2_SIZE;
+  document.getElementById('scatt').textContent=r1att+r2att;
+  document.getElementById('celp').textContent=
+    r2score>=5
+    ?'¡Completaste ambas rondas con excelencia! Eres un verdadero astronauta del vocabulario. 🌟'
+    :r2score>=3
+    ?"¡Buen trabajo! Completaste las 2 rondas. Sigue practicando para dominar el universo del español. 🚀"
+    :"Completaste las 2 rondas. ¡Cada intento te hace más fuerte! Vuelve a intentarlo. ☄";
+}
+
+makeStars();restartAll();
+</script>
+</body>
+</html>
